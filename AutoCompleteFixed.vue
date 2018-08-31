@@ -85,6 +85,7 @@ export default {
         this.selected = true
       } else {
         this.selected = false
+        // .search为autocomplete的父级className
         let auto = document.querySelector('.search [autocomplete]')
         auto.focus()
       }
