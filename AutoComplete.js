@@ -1,3 +1,33 @@
+/*
+以mixins方式引入，使用到了lodash的set和get方法，具体使用方式如下
+template:
+
+<AutoComplete
+  class="search"
+  placeholder=""
+  v-model.trim="a.b"
+  @on-search="handleSearch"
+  @on-change="handleChange"
+  @on-focus="handleFocus">
+  <div class="empty" v-if="isEmpty">暂无搜索结果</div>
+  <template v-else>
+    <Option v-for="(item,index) in serachResult" :value="item" :key="index" @click.native="handleSelect(item)">
+    </Option>
+  </template>
+</AutoComplete>
+
+params:
+autoComplete: {
+  url: 'url',
+  queryField: 'field',
+  successHandle: this.AutoCompleteSuccessHandle,
+  findHandle: (res) => {
+    this.selectResult = res
+  },
+  keyWordsMap: 'a.b'
+}
+*/
+
 export default {
   data () {
     return {
